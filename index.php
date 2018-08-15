@@ -45,9 +45,61 @@
 // //别运行，自己去推理一下代码。也写几个可变变量玩玩吧！
 // echo $$$$$shu;
 
-$data  = $_REQUEST['data'];
-// echo $data;
+// $data  = $_REQUEST['data'];
+// // echo $data;
 
-print_r(123);
+// print_r(123);
+
+
+// 循环
+// $i = 0;
+// echo '<table width="800" border="1" >';
+
+// while ($i <= 50) {
+//     if ($i % 10 == 0) {
+//         if($i%20==0){
+//             echo '<tr bgcolor="yellow" />';
+//         }else{
+//             echo '<tr bgcolor="block" />';
+//         }
+//     }
+
+//     echo '<td>' . $i . '</td>';
+//     $i++;
+// }
+
+// echo '</table>';
+
+// goto 跳出循环
+// for ($i = 0; $i < 100; $i++) {
+//     echo "我是第 $i 行数据<br/>";
+//     if ($i >= 50) {
+//         goto end;
+//     }
+// }
+
+// end :
+//     echo '结束';
+
+function foo()
+{
+    echo '我是函数foo哟，调一下我才会执行定义函数bar的过程<br />';
+    function bar()
+    {
+        echo '在foo函数内部有个函数叫bar函数<br />';
+    }
+
+
+}
+
+
+foo();
+
+//现在可以调用bar()函数了，因为foo()函数的执行使得bar()函数变为已定义的函数
+
+bar();
+
+//再调一次foo()看看是不是会报错？
+foo();
 
 ?>
