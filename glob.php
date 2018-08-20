@@ -65,25 +65,50 @@ function demo()
 
 
 // 数组
-$shu = [1, 1.5, true, '天王盖地虎，小鸡炖蘑菇'];
+// $shu = [1, 1.5, true, '天王盖地虎，小鸡炖蘑菇'];
 
-echo '<pre>';
-var_dump(sort($shu));
-echo '</pre>';
+// echo '<pre>';
+// var_dump(sort($shu));
+// echo '</pre>';
 
-echo count($shu) . '-数组的长度<br/>';
+// echo count($shu) . '-数组的长度<br/>';
 
-foreach ($shu as $key => $value) {
-    echo "数组的$key : $value <br/>";
-};
+// foreach ($shu as $key => $value) {
+//     echo "数组的$key:$value <br/>";
+// };
 
-$arr = [[1, 2, 3], [3, 3, 3], [5, 2], [0, 2]];
-// 自定义排序
-uasort($arr, function ($a, $b) {
-    if ($a == $b) {
-        return 0;
-    }
-    return ($a < $b) ? -1 : 1;
-});
-echo $arr;
+// $arr = [[1, 2, 3], [3, 3, 3], [5, 2], [0, 2]];
+// // 自定义排序
+// uasort($arr, function ($a, $b) {
+//     if ($a == $b) {
+//         return 0;
+//     }
+//     return ($a < $b) ? -1 : 1;
+// });
+
+// print_r($arr);
+
+// 文件
+
+$filename = 'test.txt';
+
+// $filestring = file_get_contents($filename);
+// echo $filestring;
+// $open = fopen($filename, 'w+');
+
+// $html = fwrite($open, 'hello php!');
+
+// if ($html) {
+//     echo '写入成功！';
+//     echo readfile('test.txt');
+// } else {
+//     echo '写入失败！ <br/>';
+//     echo readfile('test.txt');
+// }
+
+// rename('hello.txt', 'test.txt');   重命名
+
+// 复制
+// copy('test.txt', 'hello.txt');
+unlink('hello.txt');
 ?>
