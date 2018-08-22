@@ -81,25 +81,61 @@
 // end :
 //     echo '结束';
 
-function foo()
-{
-    echo '我是函数foo哟，调一下我才会执行定义函数bar的过程<br />';
-    function bar()
-    {
-        echo '在foo函数内部有个函数叫bar函数<br />';
+// function foo()
+// {
+//     echo '我是函数foo哟，调一下我才会执行定义函数bar的过程<br />';
+//     function bar()
+//     {
+//         echo '在foo函数内部有个函数叫bar函数<br />';
+//     }
+
+
+// }
+
+
+// foo();
+
+// //现在可以调用bar()函数了，因为foo()函数的执行使得bar()函数变为已定义的函数
+
+// bar();
+
+// //再调一次foo()看看是不是会报错？
+// foo();
+
+
+// 写留言本
+// 设置时区
+
+date_default_timezone_set('PRC');
+
+// 读取txt内容
+$string = file_get_contents('message.txt');
+
+if ($string) {
+    $string = rtrim($string, '&^');
+
+    // 切割成数组
+    $arr = explode('&^', $string);
+
+    foreach ($arr as $key => $value) {
+        list($username, $content, $time) = explode('&#', $value);
+
+        echo '用户名为<font color="gree">:' . $username . '</font>内容为<font color="red">:' . $content . '</font>时间为:' . date('Y-m-d H:i:s', $time);
+        echo '<hr />';
     }
-
-
+} else {
+    echo '留言为空！';
 }
 
-
-foo();
-
-//现在可以调用bar()函数了，因为foo()函数的执行使得bar()函数变为已定义的函数
-
-bar();
-
-//再调一次foo()看看是不是会报错？
-foo();
-
 ?>
+
+<h1>基于文件的留言本演示</h1>
+<form action="write.php" method="post">
+    用户名：<input type="text" name="username" /><br />
+
+    留言内容：<textarea  name="content"></textarea><br />
+
+    <input type="submit" value="提交" />
+
+</form>
+
