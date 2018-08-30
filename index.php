@@ -106,13 +106,6 @@
 // 写留言本
 // 设置时区
 
-$bl1 = 0.06 * 100 - 0.05 * 100 == 1.0;
-$bl2 = 0.07 * 100 - 0.06 * 100 == 1.0;
-
-var_dump($bl1);
-var_dump($bl2);
-exit;
-
 date_default_timezone_set('PRC');
 
 // 读取txt内容
